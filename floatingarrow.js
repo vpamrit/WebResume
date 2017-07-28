@@ -3,25 +3,17 @@
 // });
 $(document).ready(function(){ $(window).scrollTop(0);});
 
-var scrollPos = [$("#portrait").offset().top];
-
-var sectionNumber = 2;
 var arrow = $('#toknowledge');
 var complete = 0;
 var nav = $("#navigation");
 var left = (window.innerWidth-nav[0].offsetWidth)/2;
 nav.css({top: -1*nav[0].offsetHeight+"px", right: left + 'px'});
 
+//$("#knowledge").offset().top + ($(window).height() - $("#knowledge").outerHeight(true)) / 2
 
 $("#toknowledge").click(function() {
-    for(var x = 0; x < sectionNumber; x++){
-        if(scrollY < scrollPos[x] - 60){
-            break;
-        }
-    }
-
     $('html, body').animate({
-        scrollTop: scrollPos[x] - ($(window).height() - $("#portrait").outerHeight(true)) / 2},
+        scrollTop: $("#portrait").offset().top - $("#portrait").outerHeight(true) / 2},
             2000, function(){complete = 0; slowfade(1); popinmenu();});
 });
 

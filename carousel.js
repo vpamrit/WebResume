@@ -14,10 +14,17 @@ $(document).ready(function() {
     $("#left").click(function(){queueleft()});
 
     function queueright(){
+        console.log(queue.size);
+        if(queue.length > 0 && queue[0] != 1){
+            queue = [];
+        }
         queue.push(1);
     }
 
     function queueleft(){
+        if(queue.length > 0 && queue[0] != 2){
+            queue = [];
+        }
         queue.push(2);
     }
 
@@ -150,7 +157,6 @@ $(document).ready(function() {
 
     function runthread(){
         if(queue.length == 0){
-            console.log("yo");
             setTimeout(function(){runthread()}, 50);
         }
         else{
