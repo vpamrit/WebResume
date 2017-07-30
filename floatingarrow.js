@@ -9,7 +9,6 @@ var nav = $("#navigation");
 var leftarrow = $("#left");
 var rightarrow = $("#right");
 var left = ($(window).innerWidth() - nav[0].offsetWidth)/2;
-nav.css({top: -1*nav[0].offsetHeight+"px", right: left + 'px'});
 
 var element = document.getElementsByClassName("centered")[0];
 
@@ -35,19 +34,14 @@ $("#toknowledge").click(function() {
         });
     });
 
-// function slowfade(opacity){
-//     $("#toknowledge").css('opacity', opacity.toString());
-//     if(opacity <= 0){
-//         $("#toknowledge").css('visibility', 'hidden');
-//     }
-//     else{
-//         setTimeout(slowfade(opacity-0.01), 1000);
-//     }
-// }
-
 function popinmenu(){
-    setTimeout(function(){TweenMax.to(nav, 1.2, {top:"0px", ease: Elastic.easeOut});}, 250);
-    // nav.animate({'top': '0px'}, 2000, "easeOutBounce");
+    nav.css({visibility: "visible"});
+    $("#menubar").css({visibility: "visible"});
+
+    // if($("#dropbutton").css('display') == 'none'){
+        nav.css({top: -1*nav[0].offsetHeight+"px", right: left + 'px'});
+        setTimeout(function(){TweenMax.to(nav, 1.2, {top:"0px", ease: Elastic.easeOut});}, 250);
+    // }
 }
 
 //this can stack animations (which is stupid!)

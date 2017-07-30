@@ -1,0 +1,180 @@
+
+@media only screen and (min-width : 1025px) {
+    /* Styles */
+    .box {
+        border-radius: 35px;
+        width: 50%;
+        height: 50%;
+        z-index: 10;
+        color: white;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: all 2s ease;
+    }
+
+    .middle-of-div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        /*height: auto;*/
+        /*display: flex;*/
+        /*align-items: center;*/
+        /*justify-content: center;*/
+        /*transform: translateY(-50%);*/
+        margin: 0 auto;
+        padding: 10px;
+        z-index: 1000;
+        color: white;
+    }
+
+    .centered {
+        position: absolute;
+        visibility: visible;
+        top: 150%;
+        right: 25%;
+        overflow: auto;
+        transform: scale(1.0);
+        transition: all 1s ease;
+    }
+
+    .rightside {
+        position: absolute;
+        visibility: visible;
+        overflow: hidden;
+        top: 150%;
+        transform: scale(0.3);
+        right: -18%;
+        transition: all 1s ease;
+    }
+
+    .leftside {
+        position: absolute;
+        visibility: visible;
+        top: 150%;
+        right: 68vw;
+        overflow: hidden;
+        transform: scale(0.3);
+        transition: all 1s ease;
+    }
+
+    .routside {
+        position: absolute;
+        overflow: hidden;
+        top: 150%;
+        transform: scale(0.3) translateX(100%);
+        right: -35vw;
+        visibility: hidden;
+        transition: all 1s ease;
+    }
+
+    .loutside {
+        position: absolute;
+        overflow: hidden;
+        top: 150%;
+        transform: scale(0.3) translateX(-100%);
+        right: 80vw;
+        visibility: hidden;
+        transition: all 1s ease;
+    }
+
+#menubar{
+    position: fixed;
+}
+
+#dropbutton{
+    display: none;
+}
+
+#navigation{
+    top: 0;
+    visibility: hidden;
+    background-color: rgba(0,0,0,0.6);
+    padding-bottom: 10px;
+    position: fixed;
+    max-width: 100%;
+    max-height: 20%;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    font-size: 1.3vw;
+    display: inline-table;
+}
+
+ul li{
+    position: relative;
+    display: inline;
+}
+
+nav ul li span{
+ position: relative;
+    top: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+    padding-top:10px;
+    padding-right:10px;
+    line-height: 80px;
+    margin-top: 0px;
+    border-top: 4px solid firebrick;
+}
+
+/*inserts the line below*/
+/*the after is the block element*/
+nav ul li span:after{
+    content: "";
+    display: inline-block;
+    text-decoration: none;
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    background-color: firebrick;
+    width: 0;
+    height: 3px;
+    transition: all 0.4s;
+}
+
+nav ul li span:hover{
+    color: firebrick;
+    text-decoration: none;
+}
+
+nav ul li span:hover:after{
+    width: 100%;
+    text-decoration: none;
+}
+
+/*nav ul li span:focus{*/
+    /*text-decoration: none;*/
+    /*color: firebrick;*/
+/*}*/
+
+/*nav ul li span:focus:after{*/
+    /*width: 100%;*/
+/*}*/
+
+.focused{
+    text-decoration: none;
+    color: firebrick;
+}
+
+.after{
+    width: 100%;
+}
+
+nav ul li span.after{
+    width: 100%;
+}
+nav ul li span.after:after{
+    width: 100%;
+}
+
+
+nav ul li span.after:hover:after{
+    width: 100%;
+}
+
+}

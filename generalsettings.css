@@ -1,3 +1,16 @@
+
+@media all {
+html {
+    background: url(images/artist2.jpg) no-repeat fixed center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
 h2{
     font-family: "Century Gothic";
     font-size: large;
@@ -16,4 +29,121 @@ body {
     text-align:center;
     line-height:1.25vw;
     padding: 0px;
+}
+
+.outside{
+    visibility: hidden;
+}
+
+#centertext{
+    position: absolute;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+#skills{
+    font-size: 1.3vw;
+}
+
+#interests{
+    font-size: 0.70vw;
+}
+
+#projects{
+    font-size: 0.75vw;
+}
+
+#endbuffer{
+    position:absolute;
+    top: 180%;
+}
+
+#left{
+    visibility: hidden;
+    width: 50px;
+    height: 70px;
+    text-indent: -9999px;
+    position: fixed;
+    left: 20%;
+    bottom: 50%;
+    transform: translateY(-50%);
+    background: url("images/larrow.jpg") no-repeat center 90%;
+    background-size: 100%;
+    z-index: 10000;
+    opacity: 0.4;
+    transition: opacity 1s ease-in-out;
+}
+
+#left:hover {
+    opacity: 1.0;
+    transition: opacity .55s ease-in-out;
+}
+
+#right{
+    visibility: hidden;
+    width: 50px;
+    height: 70px;
+    text-indent: -9999px;
+    position: fixed;
+    right: 20%;
+    bottom: 50%;
+    transform: translateY(-50%);
+    background: url("images/rarrow.jpg") no-repeat center 90%;
+    background-size: 100%;
+    z-index: 10000;
+    opacity: 0.4;
+    transition: opacity 1s ease-in-out;
+}
+
+#right:hover {
+    opacity: 1.0;
+    transition: opacity .55s ease-in-out;
+}​
+
+#menubar{
+    visibility: hidden;
+ }
+
+
+     /*::-webkit-scrollbar-track*/
+     /*{*/
+     /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+     /*border-radius: 10px;*/
+     /*background-color: #F5F5F5;*/
+     /*}*/
+
+     /*::-webkit-scrollbar*/
+     /*{*/
+     /*width: 12px;*/
+     /*background-color: #F5F5F5;*/
+     /*}*/
+
+     /*::-webkit-scrollbar-thumb*/
+     /*{*/
+     /*border-radius: 10px;*/
+     /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+     /*background-color: #D62929;*/
+     /*}*/
+
+
+     /*tanking some kind of error from above*/
+     /*#toknowledge {  }*/
+
+ #toknowledge {
+     width: 70px;
+     height: 70px;
+     text-indent: -9999px;
+     position: fixed;
+     z-index: 5000;
+     right: 50vw;
+     bottom: 5vw;
+     visibility: hidden;
+     opacity: 0;
+     background: url("images/arrow.png") no-repeat center 90%;
+     background-size: 100%;
+ }
+
 }
