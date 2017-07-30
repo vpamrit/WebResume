@@ -4,19 +4,38 @@
 
 $(window).bind('resizeEnd', function() {
     //do something, window hasn't changed size in 500ms
-    window.scrollTo(0, $("#portrait").offset().top - $("#portrait").outerHeight(true) / 2);
+    var element = document.getElementsByClassName("centered")[0];
+    $('html, body').animate({
+        scrollTop: $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2}, 60);
+    var nav = $("#navigation");
+    var left = ($(window).innerWidth() - nav[0].offsetWidth)/2;
+    nav.animate({right: left + 'px'}, 50);
+    // var newPos = ($(window).height()/2);
+    // $("#left").animate({position: 'fixed', top: newPos + 'px'}, 50);
+    // $("#right").animate({position: 'fixed', top: newPos + 'px'}, 50);
+
+    // window.scrollTo(0, $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2);
 });
 
 $(window).resize(function(){
-    if(this.resizeTO) clearTimeout(this.resizeTO);
-    this.resizeTO = setTimeout(function() {
-        $(this).trigger('resizeEnd');
-    }, 1);
+    if(scrolledDown == true){
+        var newPos = ($(window).height()/2);
+        $("#left").css({position: 'fixed', top: newPos + 'px'});
+        $("#right").css({position: 'fixed', top: newPos + 'px'});
+        var element = document.getElementsByClassName("centered")[0];
+        console.log($(element));
+        window.scrollTo(0, $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2);
+        var nav = $("#navigation");
+        var left = ($(window).innerWidth() - nav[0].offsetWidth)/2;
+        nav.css({right: left + 'px'});
+        if(this.resizeTO) clearTimeout(this.resizeTO);
+        this.resizeTO = setTimeout(function() {
+            $(this).trigger('resizeEnd');
+        }, 500);
+    }
     // console.log($("#knowledge").offset().top);
     // console.log($("#knowledge").outerHeight(true));
 
-    // $('html, body').animate({
-    //         scrollTop: $("#knowledge").offset().top + ($(window).height() - $("#knowledge").outerHeight(true)) / 2}, 0);
 
 
 });

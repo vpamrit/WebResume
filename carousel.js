@@ -13,6 +13,19 @@ $(document).ready(function() {
     $("#right").click(function(){queueright()});
     $("#left").click(function(){queueleft()});
 
+    $(window).on("swipeleft",function(){
+        if(scrolledDown) {
+            queueleft();
+        }
+    });
+
+    $(window).on("swiperight",function(){
+        if(scrolledDown) {
+            queueright();
+        }
+    });
+
+
     function queueright(){
         console.log(queue.size);
         if(queue.length > 0 && queue[0] != 1){

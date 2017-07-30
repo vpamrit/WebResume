@@ -6,26 +6,44 @@ $(document).ready(function(){ $(window).scrollTop(0);});
 var arrow = $('#toknowledge');
 var complete = 0;
 var nav = $("#navigation");
-var left = (window.innerWidth-nav[0].offsetWidth)/2;
+var leftarrow = $("#left");
+var rightarrow = $("#right");
+var left = ($(window).innerWidth() - nav[0].offsetWidth)/2;
 nav.css({top: -1*nav[0].offsetHeight+"px", right: left + 'px'});
+
+var element = document.getElementsByClassName("centered")[0];
+
+var newPos = ($(window).height()/2);
+leftarrow.css({position: 'fixed', top: newPos + 'px'});
+rightarrow.css({position: 'fixed', top: newPos + 'px'});
 
 //$("#knowledge").offset().top + ($(window).height() - $("#knowledge").outerHeight(true)) / 2
 
 $("#toknowledge").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#portrait").offset().top - $("#portrait").outerHeight(true) / 2},
-            2000, function(){complete = 0; slowfade(1); popinmenu();});
-});
 
-function slowfade(opacity){
-    $("#toknowledge").css('opacity', opacity.toString());
-    if(opacity <= 0){
-        $("#toknowledge").css('visibility', 'hidden');
-    }
-    else{
-        setTimeout(slowfade(opacity-0.01), 1000);
-    }
-}
+    $("#toknowledge").animate({opacity: 0}, 100);
+    $('html, body').animate({
+            scrollTop: $("#portrait").offset().top - $("#portrait").outerHeight(true) / 2},
+        2000,
+        function() {
+            complete = 0;
+            popinmenu();
+            scrolledDown = true;
+            $("#intro").css({visibility: 'hidden'});
+            $("#left").css({visibility: 'visible'});
+            $("#right").css({visibility: 'visible'});
+        });
+    });
+
+// function slowfade(opacity){
+//     $("#toknowledge").css('opacity', opacity.toString());
+//     if(opacity <= 0){
+//         $("#toknowledge").css('visibility', 'hidden');
+//     }
+//     else{
+//         setTimeout(slowfade(opacity-0.01), 1000);
+//     }
+// }
 
 function popinmenu(){
     setTimeout(function(){TweenMax.to(nav, 1.2, {top:"0px", ease: Elastic.easeOut});}, 250);
@@ -45,6 +63,25 @@ $(document).keydown(function(e) {
 runIt();
 
 function runIt() {
-    arrow.animate({top:'+=20'}, 1000);
-    arrow.animate({top:'-=20'}, 1000, runIt);
+    if(!scrolledDown){
+        arrow.animate({top:'+=20'}, 1000);
+        arrow.animate({top:'-=20'}, 1000, runIt);
+    }
+}
+
+function getInvisHeight(elem) {
+    var previousCss  = elem.attr("style");
+
+    elem
+        .css({
+            position:   'absolute', // Optional if #myDiv is already absolute
+            visibility: 'hidden',
+            display:    'block'
+        });
+
+    optionHeight = elem.height();
+
+    elem.attr("style", previousCss ? previousCss : "");
+
+    return optionHeight;
 }

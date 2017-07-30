@@ -19,10 +19,11 @@ $(document).ready(function(){
     animations
         .staggerFromTo($("#part1").find("span"), 1, {autoAlpha:0}, {autoAlpha:1}, 1)
         .staggerFromTo($("#part2").find("span"), 0.1, {autoAlpha:0}, {autoAlpha:1}, 0.1, "+=0.6")
-        .staggerFromTo($("#part3").find("span"), 0.8, {autoAlpha:0}, {autoAlpha:1}, 0.1, "+=0.8")
-        .staggerFromTo($("#part4").find("span"), 0.5, {autoAlpha:0}, {autoAlpha:1}, 0.8, "+=0.7")
-        .staggerFromTo($("#part5").find("span"), 3, {autoAlpha:0}, {autoAlpha:1})
-        .staggerFromTo($("#part6").find("span"), 3, {autoAlpha:0}, {autoAlpha:1});
+        .staggerFromTo($("#part3").find("span"), 0.8, {autoAlpha:0}, {autoAlpha:1}, 0.1, "+=0.6")
+        .staggerFromTo($("#part4").find("span"), 0.8, {autoAlpha:0}, {autoAlpha:1}, 0.8, "+=0.6")
+        .staggerFromTo($("#part5").find("span"), 0.5, {autoAlpha:0}, {autoAlpha:1}, 0.2, "+=1.0")
+        // .staggerFromTo($("#part6").find("span"), 0, {autoAlpha:0}, {autoAlpha:1})
+        .to($("#toknowledge"), 0.1, {visibility: 'visible', opacity: 1}, '+=0.2');
 
     animations.play();
     animations.resume();
