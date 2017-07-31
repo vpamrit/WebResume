@@ -8,7 +8,6 @@ var complete = 0;
 var nav = $("#navigation");
 var leftarrow = $("#left");
 var rightarrow = $("#right");
-var left = ($(window).innerWidth() - nav[0].offsetWidth)/2;
 
 var element = document.getElementsByClassName("centered")[0];
 
@@ -19,10 +18,10 @@ rightarrow.css({position: 'fixed', top: newPos + 'px'});
 //$("#knowledge").offset().top + ($(window).height() - $("#knowledge").outerHeight(true)) / 2
 
 $("#toknowledge").click(function() {
-
+    var element = document.getElementsByClassName("centered")[0];
     $("#toknowledge").animate({opacity: 0}, 100);
     $('html, body').animate({
-            scrollTop: $("#portrait").offset().top - $("#portrait").outerHeight(true) / 2},
+            scrollTop: $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2},
         2000,
         function() {
             complete = 0;
@@ -39,6 +38,7 @@ function popinmenu(){
     $("#menubar").css({visibility: "visible"});
 
     // if($("#dropbutton").css('display') == 'none'){
+        var left = ($(window).innerWidth() - nav[0].offsetWidth)/2;
         nav.css({top: -1*nav[0].offsetHeight+"px", right: left + 'px'});
         setTimeout(function(){TweenMax.to(nav, 1.2, {top:"0px", ease: Elastic.easeOut});}, 250);
     // }

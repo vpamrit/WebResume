@@ -75,7 +75,7 @@ $(document).ready(function() {
         carousel[temp].addClass("centered");
 
         curposition = (curposition+1) % carsize;
-        menu[curposition].addClass("after");
+        menu[curposition].addClass("clicked");
     }
 
     function moveleft(){
@@ -112,7 +112,7 @@ $(document).ready(function() {
             carousel[temp].addClass("routside");
 
             curposition = (curposition - 1 + carsize) % carsize;
-            menu[curposition].addClass("after");
+            menu[curposition].addClass("clicked");
     }
 
     $("#a").click(function(){
