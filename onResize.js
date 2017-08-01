@@ -10,6 +10,10 @@ $(window).bind('resizeEnd', function() {
     var nav = $("#navigation");
     var left = ($(window).innerWidth() - nav[0].offsetWidth)/2;
     nav.animate({right: left + 'px'}, 50);
+    // if($(window).innerWidth() < 1150) {
+    //     $("#portrait").find('.read_less').click();
+    // }
+
     // var newPos = ($(window).height()/2);
     // $("#left").animate({position: 'fixed', top: newPos + 'px'}, 50);
     // $("#right").animate({position: 'fixed', top: newPos + 'px'}, 50);

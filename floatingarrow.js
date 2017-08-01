@@ -2,6 +2,30 @@
 //     alert("My First Jquery Test");
 // });
 $(document).ready(function(){ $(window).scrollTop(0);});
+$(function(){ /* to make sure the script runs after page load */
+    $('a.read_more').click(function(event){ /* find all a.read_more elements and bind the following code to them */
+
+        event.preventDefault(); /* prevent the a from changing the url */
+        $(this).hide();
+        $(this).parents('.text_item').find('.expandable').show(); /* show the .more_text span */
+        $(this).parents('.text_item').find('.read_less').show();
+
+    });
+
+    $('a.read_less').click(function(event){ /* find all a.read_more elements and bind the following code to them */
+
+        event.preventDefault(); /* prevent the a from changing the url */
+        $(this).hide();
+        $(this).parents('.text_item').find('.expandable').hide(); /* show the .more_text span */
+        $(this).parents('.text_item').find('.read_more').show();
+
+    });
+
+    if($(window).innerWidth() > 1150) {
+        $("#portrait").find('.read_more').click();
+    }
+
+});
 
 var arrow = $('#toknowledge');
 var complete = 0;
@@ -61,21 +85,4 @@ function runIt() {
         arrow.animate({top:'+=20'}, 1000);
         arrow.animate({top:'-=20'}, 1000, runIt);
     }
-}
-
-function getInvisHeight(elem) {
-    var previousCss  = elem.attr("style");
-
-    elem
-        .css({
-            position:   'absolute', // Optional if #myDiv is already absolute
-            visibility: 'hidden',
-            display:    'block'
-        });
-
-    optionHeight = elem.height();
-
-    elem.attr("style", previousCss ? previousCss : "");
-
-    return optionHeight;
 }

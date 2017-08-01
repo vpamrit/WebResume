@@ -2,6 +2,16 @@
 
     .portrait-image {
         width: 100%;
+        max-width: 260px;
+        min-width: 140px;
+    }
+
+    .expandable {
+        display: none;
+    }
+
+    .read_less {
+        display: none;
     }
 
     html {
@@ -35,6 +45,8 @@
     body {
         background-color: transparent;
         height: 100%;
+        font-family: Avenir;
+        /*font-family: "Frutiger Next LT W1G";*/
     }
 
     .row-center p {
@@ -61,11 +73,11 @@
     }
 
     #interests {
-        font-size: 0.9vw;
+        font-size: 1vw;
     }
 
     #projects {
-        font-size: 0.9vw;
+        font-size: 1vw;
     }
 
     #endbuffer {

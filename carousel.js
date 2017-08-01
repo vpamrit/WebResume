@@ -150,7 +150,7 @@ $(document).ready(function() {
         if(curposition == value){
             return;
         }
-        else if(rdistance < ldistance){
+        else if(rdistance <= ldistance){
             for(var x=0; x<rdistance; x++){
                 queueright();
             }
