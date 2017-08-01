@@ -1,29 +1,20 @@
 
-@media only screen and (min-width : 1025px) {
+@media only screen and (min-width : 1050px) {
     /* Styles */
 
-    /*Sub-sizes */
-    @media (min-width: 1000px){
-        .portrait-image {
-            padding: 10px;
-            min-width: 220px;
-            max-width: 250px;
-        }
-    }
+    /*!*Sub-sizes *!*/
+    /*@media (max-width: 1200px) {*/
+        /*.portrait-image {*/
+            /*min-width: 200px;*/
+        /*}*/
+    /*}*/
 
-    @media (max-width: 1200px) {
-        .portrait-image {
-            padding: 10px;
-            min-width: 190px;
-        }
-    }
-
-    @media (min-width: 1250px){
-        .portrait-image {
-            padding: 10px;
-            min-width: 220px;
-        }
-    }
+    /*@media (min-width: 1250px){*/
+        /*.portrait-image {*/
+            /*min-width: 250px;*/
+            /*max-width: 260px;*/
+        /*}*/
+    /*}*/
 
     /*@media (min-width: 1450px){*/
         /*.portrait-image {*/

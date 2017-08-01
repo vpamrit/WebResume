@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+          <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"-->
+          <!--integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="generalsettings.css">
     <link rel="stylesheet" href="PhoneSize.css">
     <link rel="stylesheet" href="TabletSize.css">
@@ -37,18 +39,16 @@
                     <h6>Completed Courses</h6>
                     <p> C++ programming and Java programming. At
                         Vanderbilt, I have taken Data Structures, Discrete Structures, Computer Organization, Linear
-                        Algebra, and Multivariable Calculus.
+                        Algebra, Multivariable Calculus, and more.
                     </p>
-
+                </br>
                     <h6>Past Experience</h6>
                     <p>I currently work for Vanderbilt IT during the school year. Prior to that, I worked in various
-                        research
-                        labs.</p>
-
+                        research labs at UT Austin.</p>
+                    </br>
                     <h6>Game Development</h6>
                     <p> I have worked on physics-intensive games like "Planet Vortex" and "Entity." I also participated
-                        in
-                        and performed well in the MIT Battlecode RTS AI coding competition.</p>
+                        in and performed well in the MIT Battlecode RTS coding competition.</p>
                 </div>
             </div>
         </div>
@@ -59,38 +59,48 @@
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
                     <h2> Interests </h2>
-                    <h6>Algorithms</h6>
-                    <p>I've attended several CS-related algorithm competitions, such as the ICPC. Call me "Lumberjack"
-                        because
-                        I cut your runtime to less than O log(n). </p>
-
-                    <h6>Carnatic Music</h6>
-                    <p> In my spare time, I enjoy singing and listening to traditional music known as "Carnatic" music
-                        from
-                        South India.</p>
-
-                    <h6>Chess</h6>
-                    <p> I've been playing chess for six years. Whether it's competitively or casually, the game is
-                        on.</p>
-
-                    <h6>Tennis</h6>
-                    <p> You caught me red-handed--these days I do watch a lot more than I play. I play vicariously. Go
-                        Nadal!</p>
+                    </br>
+                    <table id = "formattable" style="width:100%; font-size:calc(12px + 0.2vw);">
+                        <tr>
+                            <td>Algorithms</td>
+                            <td> | </td>
+                            <td colspan = "10"> I've attended several CS-related algorithm competitions, such as the ICPC. Call me "Lumberjack"
+                                because
+                                I cut your runtime to less than O log(n).</td>
+                        </tr>
+                        <tr>
+                            <td>Chess</td>
+                            <td> | </td>
+                            <td colspan = "10">I've been playing chess for six years. Whether it's competitively or casually, the game is
+                                on.</td>
+                        </tr>
+                        <tr>
+                            <td>Tennis</td>
+                            <td> | </td>
+                            <td colspan = "10">You caught me red-handed--these days I do watch a lot more than I play. I play vicariously. Go
+                                Nadal!</td>
+                        </tr>
+                        <tr>
+                            <td>Acapella</td>
+                            <td>|</td>
+                            <td colspan = "10">In my spare time, I enjoy singing and listening to traditional music from South India.</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="portrait" class="box centered container-fluid">
+    <div id="portrait" class="box centered container">
         <div class="middle-of-div">
             <div class="row">
                 <!--col-xs-pull-6 col-sm-6 col-sm-offset-3-->
-                <div class="col-md-offset-1 col-md-4 col-sm-5 col-sm-offset-1 .col-12">
-                    <img src="images/profilepic.jpg" alt="VishnuPydah" class="img-circle portrait-image">
+                <div class="col-md-offset-1 col-md-4 col-sm-5 col-sm-offset-1 col-xs-8 col-xs-offset-2">
+                    <img src="images/profilepic.jpg" alt="VishnuPydah" class="img-circle portrait-image center-block">
                 </div>
 
                 <!--col-sm-offset-1 col-sm-10 col-sm-push-1-->
-                <div class="col-md-6 col-sm-5 .col-12 text_item">
+                <div class="col-md-6 col-sm-5 col-xs-10 col-xs-offset-1 text_item nomargin">
                     <h4 class="media-heading">About me</h4>
                     </br>
                     <p> I am currently a student at Vanderbilt University, majoring in Computer
@@ -122,6 +132,7 @@
                 <div class="col-sm-12">
                     <div class="row col-sm-12">
                         <h2>Development Skills</h2>
+                         </br>
                     </div>
                     </br>
                     </br>
@@ -204,29 +215,20 @@
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
                     <h2> Current Projects </h2>
-
-                    <h6>Full-Stack Web Development</h6>
-                    <p> I am currently learning Full-Stack web development via a coursera course from Hong Kong
-                        University.
-                        The course covers HTML, Javascript/JQuery, and CSS, as well as front-end tools such as Angular
-                        JS
-                        and
-                        Bootstrap.</p>
-
+                    </br>
                     <h6>Android and Game Development</h6>
-                    <p> Another work in progress is a game I am attempting to code on to Android platforms. Using
-                        Android
-                        Studio and
+                    <p> Using Android Studio and
                         incorporating physics, mathematics, and simple AI algorithms, I am coding this game unofficially
                         named
-                        "Deprivate."
-                        This game is mostly just an exploration of the Android interface and style. </p>
+                        "Deprivate." The game is currently in very early development stages.</p>
 
-                    <h6>Coding Tools and Work</h6>
-                    <p> In addition to personal projects, I have been looking into important tools for programmers. I am
-                        aware of the
-                        basics
-                        of GitHub, Git, BitBucket, and SourceTree. </p>
+                    <h6>NodeJS Development</h6>
+                    <p> I am currently experimenting with NodeJS server development. Improving server
+                        security and authentication methodology are the end-goals of this side-project.</p>
+
+                    <h6>Raspberry PI Tinkering</h6>
+                    <p> I have only worked with Arduino units in the past,
+                        so I'm trying to acquaint myself with the Raspberry Pi.</p>
                 </div>
             </div>
         </div>
@@ -273,13 +275,15 @@
 
 <script type = "text/javascript">
     var scrolledDown = false;
+    var curposition = 0;
 </script>
 
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"
             integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
+            <!--integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"-->
+            <!--crossorigin="anonymous"></script>-->
+<script src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>

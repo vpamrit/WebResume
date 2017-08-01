@@ -1,6 +1,13 @@
 
-@media only screen and (max-width : 1024px) and (min-width: 601px) {
+@media only screen and (max-width : 1049px) and (min-width: 601px) {
     /* Styles */
+
+    @media (max-width: 780px) {
+        .portrait-image{
+            padding: 10px;
+            min-width: 160px;
+        }
+    }
 
     .box {
         border-radius: 35px;

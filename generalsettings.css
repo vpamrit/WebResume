@@ -1,10 +1,25 @@
 @media all {
+    .box {
+        overflow-x: hidden;
+    }
 
     .portrait-image {
         width: 100%;
-        max-width: 260px;
-        min-width: 140px;
+        /*max-width: 260px;*/
+        min-width: 160px;
     }
+
+    .nomargin {
+        margin: 10px !important;
+    }
+
+   .center-block {
+       margin: auto;
+       display:table;
+   }
+   .text-center {
+       text-align:center
+   }
 
     .expandable {
         display: none;
@@ -46,6 +61,7 @@
         background-color: transparent;
         height: 100%;
         font-family: Avenir;
+        font-size: calc(12px + 0.2vw);
         /*font-family: "Frutiger Next LT W1G";*/
     }
 
@@ -68,17 +84,6 @@
         transform: translate(-50%, -50%);
     }
 
-    #skills {
-        font-size: 1.3vw;
-    }
-
-    #interests {
-        font-size: 1vw;
-    }
-
-    #projects {
-        font-size: 1vw;
-    }
 
     #endbuffer {
         position: absolute;
@@ -130,6 +135,15 @@
     ​
     #menubar {
         visibility: hidden;
+        color: white;
+    }
+
+    th, td {
+        padding: calc(10px + 0.2vw);
+    }
+
+    th {
+        color: firebrick;
     }
 
     .hidable {

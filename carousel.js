@@ -5,8 +5,7 @@ $(document).ready(function() {
 
     var carousel = [$("#portrait"), $("#skills"), $("#projects"), $("#knowledge"), $("#interests")];
     var menu = [$("#a"), $("#b"), $("#c"), $("#d"), $("#e")];
-    var carsize = 5;
-    var curposition = 0;
+    var carsize = carousel.length;
     var temp = 0;
     var queue = [];
 
@@ -75,7 +74,8 @@ $(document).ready(function() {
         carousel[temp].addClass("centered");
 
         curposition = (curposition+1) % carsize;
-        menu[curposition].addClass("clicked");
+        if(queue.length == 0)
+            menu[curposition].addClass("focused");
     }
 
     function moveleft(){
@@ -112,7 +112,9 @@ $(document).ready(function() {
             carousel[temp].addClass("routside");
 
             curposition = (curposition - 1 + carsize) % carsize;
-            menu[curposition].addClass("clicked");
+
+            if(queue.length == 0)
+            menu[curposition].addClass("focused");
     }
 
     $("#a").click(function(){
