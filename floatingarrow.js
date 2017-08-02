@@ -3,6 +3,11 @@
 // });
 $(document).ready(function(){ $(window).scrollTop(0);});
 $(function(){ /* to make sure the script runs after page load */
+
+    $('#toknowledge').css({left: $(window).innerWidth()/2 - arrow.innerWidth()/2});
+    $('#toknowledge').css("bottom","0px");
+
+
     $('a.read_more').click(function(event){ /* find all a.read_more elements and bind the following code to them */
 
         event.preventDefault(); /* prevent the a from changing the url */
@@ -25,6 +30,14 @@ $(function(){ /* to make sure the script runs after page load */
         $("#portrait").find('.read_more').click();
     }
 
+    $(".image-container>img").each(function(i, img) {
+        $(img).css({
+            position: "relative",
+            left: ($(img).parent().width() - $(img).width()) / 2
+        });
+    });
+
+
 });
 
 var arrow = $('#toknowledge');
@@ -42,6 +55,7 @@ rightarrow.css({position: 'fixed', top: newPos + 'px'});
 //$("#knowledge").offset().top + ($(window).height() - $("#knowledge").outerHeight(true)) / 2
 
 $("#toknowledge").click(function() {
+
     var element = document.getElementsByClassName("centered")[0];
     $("#toknowledge").animate({opacity: 0}, 100);
     $('html, body').animate({

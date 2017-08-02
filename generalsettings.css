@@ -1,16 +1,66 @@
 @media all {
     .box {
-        overflow-x: hidden;
+        z-index: 5;
+        border-radius: 15px;
+        overflow-x: hidden !important;
+        overflow-y: visible;
+        border: inset rgba(0,0,0,1) 2px;
+    }
+
+    .text1 {
+        display: inline;
+        font-size: calc(14px + 2.5vw);
+    }
+
+    .text2 {
+        font-size: calc(14px + 2vw);
+    }
+
+    .text3{
+        display: inline-block;
+        white-space: nowrap;
+        font-size: calc(16px + 3vw);
+    }
+
+    .text4{
+        font-size: calc(14px + 1.5vw);
+    }
+
+    #menubar {
+        z-index: 10;
+    }
+
+    #dropbutton {
+        z-index: 11;
+    }
+
+    @media only screen and(max-width: 285px){
+        .box {
+            overflow-x: visible !important;
+        }
+    }
+
+    .stars {
+        color: firebrick;
+    }
+
+    .addskills {
+        font-size: calc(12px + 0.2vh + 0.2vw);
     }
 
     .portrait-image {
         width: 100%;
-        /*max-width: 260px;*/
         min-width: 160px;
     }
 
     .nomargin {
         margin: 10px !important;
+    }
+
+    .nopadding {
+        padding: 0px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
     }
 
    .center-block {
@@ -30,7 +80,7 @@
     }
 
     html {
-        background: url(images/theartist.jpg) no-repeat fixed center center;
+        background: url(images/artist2.jpg) no-repeat fixed center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -39,15 +89,35 @@
         overflow-y: hidden;
     }
 
+
+    #projects h6 {
+        color: firebrick;
+        text-shadow: 2px 2px #0f0f0f;
+    }
+
     h2 {
         font-family: "Century Gothic";
         font-size: large;
         text-align: center;
+        padding: 0;
+        margin: 0;
+        color: floralwhite;
+        text-shadow: 2px 2px #0f0f0f;
     }
 
     h6 {
         font-family: "Futura LT";
+        display: inline-block;
+        text-shadow: 2px 2px #0f0f0f;
     }
+
+    .taper{
+        margin: 3px 0;
+        height: 2px;
+        background: firebrick;
+        background: -webkit-gradient(linear, 0 0, 100% 0, from(black), to(black), color-stop(50%, firebrick));
+    }
+
 
     .content p {
         font-size: 1vw;
@@ -101,7 +171,7 @@
         transform: translateY(-50%);
         background: url("images/larrow.jpg") no-repeat center 90%;
         background-size: 100%;
-        z-index: 10000;
+        z-index: 100;
         opacity: 0.4;
         transition: opacity 1s ease-in-out;
     }
@@ -144,65 +214,51 @@
 
     th {
         color: firebrick;
+        text-shadow: 2px 2px #0f0f0f;
     }
 
     .hidable {
         display: block;
     }
 
-    /*::-webkit-scrollbar-track*/
-    /*{*/
-    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
-    /*border-radius: 10px;*/
-    /*background-color: #F5F5F5;*/
-    /*}*/
-    /*::-webkit-scrollbar*/
-    /*{*/
-    /*width: 12px;*/
-    /*background-color: #F5F5F5;*/
-    /*}*/
-    /*::-webkit-scrollbar-thumb*/
-    /*{*/
-    /*border-radius: 10px;*/
-    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
-    /*background-color: #D62929;*/
-    /*}*/
-    /*tanking some kind of error from above*/
-    /*#toknowledge {  }*/
-    .box {
-        overflow: auto;
+    ::-webkit-scrollbar-corner { background: rgba(0,0,0,1) !important; }
+    ::-webkit-scrollbar
+    {
+    width: 10px;
+    background-color: #2f2f2f;
+    border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb
+    {
+    border-radius: 8px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    background-color: #D62929;
     }
 
     .middle-of-div {
         position: relative;
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
         min-height: min-content;
-        margin: 0 auto;
+        margin: 0 auto !important;
         padding: 10px;
         z-index: 5;
-        color: white;
+        color: floralwhite;
     }
 
     #toknowledge {
-        width: 70px;
-        height: 70px;
-        text-indent: -9999px;
+        width: calc(30px + 3.5vw);
+        height: calc(30px + 3.5vh);
         position: fixed;
-        z-index: 5000;
-        right: 50vw;
-        bottom: 5vw;
-        visibility: hidden;
-        opacity: 0;
+        z-index: 100;
+        /*visibility: hidden;*/
+        /*opacity: 0;*/
+        /*bottom: 5vh;*/
         background: url("images/arrow.png") no-repeat center 90%;
         background-size: 100%;
-    }
-
-    .clicked {
-        text-color: firebrick;
     }
 
 }

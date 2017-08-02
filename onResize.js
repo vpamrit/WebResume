@@ -14,6 +14,13 @@ $(window).bind('resizeEnd', function() {
     //     $("#portrait").find('.read_less').click();
     // }
 
+    $(".image-container>img").each(function(i, img) {
+        $(img).css({
+            position: "relative",
+            left: ($(img).parent().width() - $(img).width()) / 2
+        });
+    });
+
     // var newPos = ($(window).height()/2);
     // $("#left").animate({position: 'fixed', top: newPos + 'px'}, 50);
     // $("#right").animate({position: 'fixed', top: newPos + 'px'}, 50);
