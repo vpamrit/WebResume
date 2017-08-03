@@ -4,8 +4,8 @@
 $(document).ready(function(){ $(window).scrollTop(0);});
 $(function(){ /* to make sure the script runs after page load */
 
-    $('#toknowledge').css({left: $(window).innerWidth()/2 - arrow.innerWidth()/2});
-    $('#toknowledge').css("bottom","0px");
+    $('#toknowledge').css({position: 'fixed', left: $(window).innerWidth()/2 - arrow.innerWidth()/2, bottom: '5vh'});
+        runIt();
 
 
     $('a.read_more').click(function(event){ /* find all a.read_more elements and bind the following code to them */
@@ -55,13 +55,19 @@ rightarrow.css({position: 'fixed', top: newPos + 'px'});
 //$("#knowledge").offset().top + ($(window).height() - $("#knowledge").outerHeight(true)) / 2
 
 $("#toknowledge").click(function() {
+    scrolledDown = true;
+    $(this).trigger('scrollDown');
+});
+
+$(window).bind('scrollDown', function () {
 
     var element = document.getElementsByClassName("centered")[0];
     $("#toknowledge").animate({opacity: 0}, 100);
     $('html, body').animate({
-            scrollTop: $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2},
+            scrollTop: $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2
+        },
         2000,
-        function() {
+        function () {
             complete = 0;
             popinmenu();
             scrolledDown = true;
@@ -69,7 +75,7 @@ $("#toknowledge").click(function() {
             $("#left").css({visibility: 'visible'});
             $("#right").css({visibility: 'visible'});
         });
-    });
+});
 
 function popinmenu(){
     nav.css({visibility: "visible"});
@@ -92,10 +98,8 @@ $(document).keydown(function(e) {
     }
 });
 
-runIt();
-
 function runIt() {
-    if(!scrolledDown){
+    if(!scrolledDown && !stop){
         arrow.animate({top:'+=20'}, 1000);
         arrow.animate({top:'-=20'}, 1000, runIt);
     }
