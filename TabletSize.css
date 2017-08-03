@@ -13,9 +13,7 @@
             font-size: calc(12px + 0.2vh);
         }
 
-
     }
-
 
     .box {
         width: 70%;
@@ -36,25 +34,50 @@
         transition: all 1s ease;
     }
 
-    .rightside {
-        position: absolute;
-        visibility: visible;
-        overflow: hidden;
-        top: 150%;
-        transform: scale(0.3);
-        right: -38vw;
-        transition: all 1s ease;
+    @media (min-width: 850px) {
+        .rightside {
+            position: absolute;
+            visibility: visible;
+            overflow: hidden;
+            top: 150%;
+            transform: scale(0.3);
+            right: -42vw;
+            transition: all 1s ease;
+        }
+
+        .leftside {
+            position: absolute;
+            visibility: visible;
+            top: 150%;
+            right: 72vw;
+            overflow: hidden;
+            transform: scale(0.3);
+            transition: all 1s ease;
+        }
     }
 
-    .leftside {
-        position: absolute;
-        visibility: visible;
-        top: 150%;
-        right: 68vw;
-        overflow: hidden;
-        transform: scale(0.3);
-        transition: all 1s ease;
+    @media (max-width: 850px) {
+        .rightside {
+            position: absolute;
+            visibility: hidden;
+            overflow: hidden;
+            top: 150%;
+            transform: scale(0.3);
+            right: -48vw;
+            transition: all 1s ease;
+        }
+
+        .leftside {
+            position: absolute;
+            visibility: hidden;
+            top: 150%;
+            right: 78vw;
+            overflow: hidden;
+            transform: scale(0.3);
+            transition: all 1s ease;
+        }
     }
+
 
     .routside {
         position: absolute;
