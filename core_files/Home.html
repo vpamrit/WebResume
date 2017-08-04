@@ -8,7 +8,7 @@
           <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"-->
           <!--integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7/dist/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="generalsettings.css">
     <link rel="stylesheet" href="PhoneSize.css">
@@ -18,6 +18,8 @@
 
 </head>
 <body>
+<div id = "wrapper">
+
 <a id ="toknowledge" class = "middle-arrow" href="#"></a>
 
 <div id = "intro">
@@ -100,7 +102,7 @@
             <div class="row">
                 <!--col-xs-pull-6 col-sm-6 col-sm-offset-3-->
                 <div class="col-md-offset-1 col-md-4 col-sm-5 col-sm-offset-1 col-xs-8 col-xs-offset-2 img-container">
-                    <img src="images/profilepic.jpg" alt="VishnuPydah" class="img-circle portrait-image center-block">
+                    <img src="../images/profilepic.jpg" alt="VishnuPydah" class="img-circle portrait-image center-block">
                 </div>
 
                 <!--col-sm-offset-1 col-sm-10 col-sm-push-1-->
@@ -111,7 +113,6 @@
                         Science and Mathematics. I have all-around experience with programming, including
                         full-stack web development and android app coding.
                     </p>
-
                     <a class="read_more"> > Read more </a>
 
                     <p class="expandable">
@@ -299,7 +300,29 @@
         <li id="d"><span>EXPERIENCE</span></li>
         <li  id="e"><span>INTERESTS</span></li>
     </ul>
+
+    <div class = "hider" style = "position: absolute; bottom: 0; left: 0;">
+        <ul>
+        <li><span style = "font-size: 8px; height: 12px;">Contact Info:</span></li>
+        <li><span style = "font-size: 8px; height: 12px;">vishnu.a.pydah@vanderbilt.edu</span></li>
+        <li><span style = "font-size: 8px; height: 12px;">781-698-9359</span></li>
+        <li><span style = "font-size: 8px; height: 12px;">github.com/vpamrit</span></li>
+        <li><a style = "font-size: 8px; height: 12px;">Resume</a></li>
+        </ul>
+    </div>
     </nav>
+</div>
+
+<button id = "resume">R E S U M É</button>
+
+<div id = "botbar">
+<nav>
+    <ul class="underlinemenu" style = "font-family: 'Futura LT'">
+        <li ><span>EMAIL: vishnu.a.pydah@vanderbilt.edu</span></li>
+        <li><span>PHONE: 781-698-9359</span></li>
+        <li><span >GITHUB: github.com/vpamrit</span></li>
+    </ul>
+</nav>
 </div>
 
 <div id="endbuffer" class="container-fluid">
@@ -333,7 +356,7 @@
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
             <!--integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"-->
             <!--crossorigin="anonymous"></script>-->
-<script src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>
@@ -343,6 +366,7 @@
 <script type="text/javascript" src="floatingarrow.js"></script>
 <script type="text/javascript" src="onResize.js"></script>
 
+</div>
 </body>
 
 </html>

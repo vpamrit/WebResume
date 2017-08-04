@@ -3,7 +3,6 @@
 // });
 $(document).ready(function(){ $(window).scrollTop(0);});
 $(function(){ /* to make sure the script runs after page load */
-
     $('#toknowledge').css({position: 'fixed', left: $(window).innerWidth()/2 - arrow.outerWidth()/2, bottom: '5vh'});
         runIt();
 
@@ -95,11 +94,14 @@ function popinmenu(){
     nav.css({visibility: "visible"});
     $("#menubar").css({visibility: "visible"});
 
-    // if($("#dropbutton").css('display') == 'none'){
         var left = ($(window).innerWidth() - nav[0].offsetWidth)/2;
         nav.css({top: -1*nav[0].offsetHeight+"px", right: left + 'px'});
-        setTimeout(function(){TweenMax.to(nav, 1.2, {top:"0px", ease: Elastic.easeOut});}, 250);
-    // }
+        setTimeout(function(){TweenMax.to(nav, 1.2, {top:"0px", ease: Circ.easeOut});}, 250);
+
+    $("#botbar").css({visibility: "visible"});
+    var val = ($(window).innerWidth() - $("#botbar")[0].offsetWidth)/2;
+    $("#botbar").css({bottom: -1*$("#botbar")[0].offsetHeight+"px", right: val + 'px'});
+    setTimeout(function(){TweenMax.to($("#botbar"), 1.2, {bottom:"0px", ease: Circ.easeOut});}, 250);
 }
 
 //this can stack animations (which is stupid!)

@@ -38,7 +38,11 @@
         z-index: 11;
     }
 
-    @media only screen and(max-width: 285px){
+    #infobutton {
+        z-index: 11;
+    }
+
+    @media only screen and(max-width: 500px){
         .box {
             overflow-x: visible !important;
         }
@@ -84,7 +88,7 @@
     }
 
     html {
-        background: url(images/artist2.jpg) no-repeat fixed center center;
+        background: url(../images/artist2.jpg) no-repeat fixed center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -133,12 +137,11 @@
 
     body {
         background-color: transparent;
-        height: 100%;
         font-family: Avenir;
+        height: 100%;
         font-size: calc(12px + 0.2vw);
         /*font-family: "Frutiger Next LT W1G";*/
     }
-
     .row-center p {
         text-align: center;
         line-height: 1.25vw;
@@ -170,7 +173,7 @@
         height: 70px;
         text-indent: -9999px;
         position: fixed;
-        background: url("images/larrow.jpg") no-repeat center 90%;
+        background: url("../images/larrow.jpg") no-repeat center 90%;
         background-size: 100%;
         z-index: 100;
         opacity: 0.4;
@@ -188,7 +191,7 @@
         height: 70px;
         text-indent: -9999px;
         position: fixed;
-        background: url("images/rarrow.jpg") no-repeat center 90%;
+        background: url("../images/rarrow.jpg") no-repeat center 90%;
         background-size: 100%;
         z-index: 100;
         opacity: 0.4;
@@ -253,8 +256,77 @@
         z-index: 100;
         visibility: hidden;
         opacity: 0;
-        background: url("images/arrow.png") no-repeat center 90%;
+        background: url("../images/arrow.png") no-repeat center 90%;
         background-size: 100%;
     }
+
+    #botbar {
+        z-index: 10;
+        color: white;
+        font-family: Moon;
+        visibility: hidden;
+        position: fixed;
+        width: 100%;
+        height: 30px;
+        background-color: rgba(16,16,16, 0.8);
+        padding-bottom: 10px;
+    }
+
+    #botbar nav {
+        background-color: rgba(0, 0, 0, 1);
+        padding-bottom: 10px;
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        overflow: hidden;
+        text-align: center;
+        transition: width 1s ease-in-out;
+    }
+
+     #botbar nav ul {
+        margin: 0 auto;
+        padding: 0;
+        white-space: nowrap;
+        list-style: none;
+        width: 100%;
+    }
+
+    #botbar ul li {
+        display: inline-table;
+        font-size: calc(9px + 0.5vw);
+        width: 33%;
+        padding: 2px;
+    }
+
+    #botbar nav ul li span {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+    }
+
+    #resume {
+        font-size: calc(16px + 0.2vw);
+        position: fixed;
+        width: 120px;
+        height: 40px;
+        right: 0;
+        top: 5%;
+        background: rgba(0,0,0,0);
+        color: white;
+        border: solid firebrick 2px;
+        border-radius: 10px;
+        transform: translateX(-20%) translateY(50%);
+    }
+
+
+    #resume:hover {
+        color: firebrick;
+    }
+
 
 }
