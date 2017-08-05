@@ -41,6 +41,11 @@ $(document).ready(function() {
     }
 
     function moveright () {
+
+        if(curposition == 0 && $(window).innerHeight() > 450 && $(window).innerWidth() > 602) {
+            $('#resume').css({display: 'block'});
+        }
+
         menu[curposition].removeClass();
         temp = (curposition-3 + carsize) % carsize;
         carousel[temp].removeClass();
@@ -79,6 +84,10 @@ $(document).ready(function() {
     }
 
     function moveleft(){
+        if(curposition == 0 && $(window).innerHeight() > 450 && $(window).innerWidth() > 602) {
+            $('#resume').css({display: 'block'});
+        }
+
             menu[curposition].removeClass();
             temp = (curposition-3 + carsize) % carsize;
             carousel[temp].removeClass();

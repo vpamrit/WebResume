@@ -6,13 +6,16 @@ $(function(){ /* to make sure the script runs after page load */
     $('#toknowledge').css({position: 'fixed', left: $(window).innerWidth()/2 - arrow.outerWidth()/2, bottom: '5vh'});
         runIt();
 
-
     $('a.read_more').click(function(event){ /* find all a.read_more elements and bind the following code to them */
 
         event.preventDefault(); /* prevent the a from changing the url */
         $(this).hide();
         $(this).parents('.text_item').find('.expandable').show(); /* show the .more_text span */
         $(this).parents('.text_item').find('.read_less').show();
+        $('#resume2').hide();
+        if($(window).innerHeight() <= 450 || $(window).innerWidth() < 602){
+            $('#resume').show();
+        }
 
     });
 
@@ -22,18 +25,29 @@ $(function(){ /* to make sure the script runs after page load */
         $(this).hide();
         $(this).parents('.text_item').find('.expandable').hide(); /* show the .more_text span */
         $(this).parents('.text_item').find('.read_more').show();
+        $('#resume2').show();
 
     });
 
-    if($(window).innerWidth() > 1150) {
-        $("#portrait").find('.read_more').click();
-    }
+    $('#dropbutton').click(function(event){
+        var nav = $('#menubar').find('nav');
+        var button = $('#dropbutton');
+        if(open) {
+            nav.removeClass('open');
+            nav.addClass('closed')
 
-    $(".image-container>img").each(function(i, img) {
-        $(img).css({
-            position: "relative",
-            left: ($(img).parent().width() - $(img).width()) / 2
-        });
+            button.removeClass('button_open');
+            button.addClass('button_close');
+        }
+        else {
+            nav.removeClass('closed')
+            nav.addClass('open');
+
+            button.removeClass('button_close');
+            button.addClass('button_open');
+        }
+        open = !open;
+        console.log( $('#menubar').find('nav'));
     });
 
 
@@ -74,7 +88,6 @@ $("#toknowledge").click(function() {
 });
 
 $(window).bind('scrollDown', function () {
-
     var element = document.getElementsByClassName("centered")[0];
     $("#toknowledge").animate({opacity: 0}, 100);
     $('html, body').animate({
@@ -84,7 +97,7 @@ $(window).bind('scrollDown', function () {
         function () {
             complete = 0;
             popinmenu();
-            $("#intro").css({visibility: 'hidden'});
+            $('#intro').hide();
             $("#left").css({visibility: 'visible'});
             $("#right").css({visibility: 'visible'});
         });
@@ -99,8 +112,7 @@ function popinmenu(){
         setTimeout(function(){TweenMax.to(nav, 1.2, {top:"0px", ease: Circ.easeOut});}, 250);
 
     $("#botbar").css({visibility: "visible"});
-    var val = ($(window).innerWidth() - $("#botbar")[0].offsetWidth)/2;
-    $("#botbar").css({bottom: -1*$("#botbar")[0].offsetHeight+"px", right: val + 'px'});
+    $("#botbar").css({bottom: -1*$("#botbar")[0].offsetHeight+"px"});
     setTimeout(function(){TweenMax.to($("#botbar"), 1.2, {bottom:"0px", ease: Circ.easeOut});}, 250);
 }
 

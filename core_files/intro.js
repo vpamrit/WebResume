@@ -29,7 +29,8 @@ $(document).ready(function(){
         .to($("#toknowledge"), 0.1, {visibility: 'visible', opacity: 1}, '+=0.2')
         .add(function(){
             $("#toknowledge").css({visibility: 'visible', opacity: 1});
-            intro_over = true});
+            intro_over = true;
+        });
 
     animations.play();
     animations.resume();

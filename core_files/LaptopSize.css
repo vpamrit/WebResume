@@ -1,5 +1,5 @@
 
-@media only screen and (min-width : 1180px) {
+@media only screen and (min-width : 1180px) and (min-height: 450px) {
     /* Styles */
     .hider {
         display: none !important;
@@ -50,8 +50,8 @@
 
 
     .box {
-        width: 55%;
-        height: 55%;
+        width: 55vw;
+        height: 55vh;
         color: white;
         padding: 10px;
         background-color: rgba(0, 0, 0, 0.7);
@@ -62,7 +62,7 @@
         position: absolute;
         visibility: visible;
         top: 150%;
-        right: 22.5%;
+        right: 22.5vw;
         transform: scale(1.0);
         transition: all 1s ease;
     }
@@ -118,7 +118,7 @@
         background-color: rgba(0, 0, 0, 1);
         position: fixed;
         padding-top: 5px;
-        width: 100%;
+        width: 100vw;
         height: calc(44px + 0.2vh);
         overflow: hidden;
         text-align: center;
@@ -141,7 +141,7 @@
         display: inline-table;
         height: 95%;
         min-width: 10px;
-        width: 15%;
+        width: 15vw;
     }
 
     #menubar nav ul li span {

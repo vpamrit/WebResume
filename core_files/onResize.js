@@ -2,27 +2,29 @@
  * Created by vishn on 7/28/2017.
  */
 
-$(window).bind('resizeEnd', function() {
-    //do something, window hasn't changed size in 500ms
-    onResize();
-
-    // $(document.body).append("<a id ='toknowledge' href='#'></a>");
-    // $('#toknowledge').css({left: $(window).innerWidth()/2 - arrow.innerWidth()/2, bottom: '5vh'});
-    // stop = false;
-    // runIt();
-    // var newPos = ($(window).height()/2);
-    // $("#left").animate({position: 'fixed', top: newPos + 'px'}, 50);
-    // $("#right").animate({position: 'fixed', top: newPos + 'px'}, 50);
-
-    // window.scrollTo(0, $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2);
-});
+// $(window).bind('resizeEnd', function() {
+//     //do something, window hasn't changed size in 500ms
+//     onResize();
+//     setTimeout(onResize(), 500);
+//
+//     // $(document.body).append("<a id ='toknowledge' href='#'></a>");
+//     // $('#toknowledge').css({left: $(window).innerWidth()/2 - arrow.innerWidth()/2, bottom: '5vh'});
+//     // stop = false;
+//     // runIt();
+//     // var newPos = ($(window).height()/2);
+//     // $("#left").animate({position: 'fixed', top: newPos + 'px'}, 50);
+//     // $("#right").animate({position: 'fixed', top: newPos + 'px'}, 50);
+//
+//     // window.scrollTo(0, $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2);
+// });
 
 
 $(window).resize(function(){
+
     if(this.resizeTO) clearTimeout(this.resizeTO);
     this.resizeTO = setTimeout(function() {
-        $(this).trigger('resizeEnd');
-    }, 500);
+       onResize(1);
+    }, 800);
 
     onResize();
 });
@@ -35,7 +37,20 @@ function runIt() {
 }
 
 
-function onResize() {
+function onResize(repeat) {
+    if($(window).innerHeight() <= 450 || $(window).innerWidth() < 602 && scrolledDown) {
+        $('#resume').hide();
+    }
+    else {
+        $('#resume').show();
+    }
+
+    if(repeat > 0) {
+        repeat--;
+        console.log(repeat);
+        setTimeout(onResize(repeat), 500);
+    }
+
     if (!scrolledDown) {
         $('#toknowledge').remove();
 
@@ -79,7 +94,7 @@ function onResize() {
 
     if(scrolledDown) {
         var element = document.getElementsByClassName("centered")[0];
-        $('html, body').animate({scrollTop: $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2}, 60);
+        $('html, body').animate({scrollTop: $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2}, 10);
         var nav = $("#navigation");
         var left = ($(window).innerWidth() - nav[0].offsetWidth) / 2;
         nav.animate({right: left + 'px'}, 50);
