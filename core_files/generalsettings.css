@@ -1,5 +1,19 @@
 @media all {
 
+    .preload * {
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -ms-transition: none !important;
+        -o-transition: none !important;
+    }
+
+    .load *{
+        -webkit-transition: all !important;
+        -moz-transition: all !important;
+        -ms-transition: all !important;
+        -o-transition: all !important;
+    }
+
     #wrapper {
         min-width: 400px;
         min-height: 400px;

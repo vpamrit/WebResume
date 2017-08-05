@@ -2,31 +2,11 @@
  * Created by vishn on 7/28/2017.
  */
 
-// $(window).bind('resizeEnd', function() {
-//     //do something, window hasn't changed size in 500ms
-//     onResize();
-//     setTimeout(onResize(), 500);
-//
-//     // $(document.body).append("<a id ='toknowledge' href='#'></a>");
-//     // $('#toknowledge').css({left: $(window).innerWidth()/2 - arrow.innerWidth()/2, bottom: '5vh'});
-//     // stop = false;
-//     // runIt();
-//     // var newPos = ($(window).height()/2);
-//     // $("#left").animate({position: 'fixed', top: newPos + 'px'}, 50);
-//     // $("#right").animate({position: 'fixed', top: newPos + 'px'}, 50);
-//
-//     // window.scrollTo(0, $(element).offset().top - ($(window).height() - $(element).outerHeight(true)) / 2);
-// });
-
 
 $(window).resize(function(){
-
-    if(this.resizeTO) clearTimeout(this.resizeTO);
-    this.resizeTO = setTimeout(function() {
-       onResize(1);
-    }, 800);
-
+    $('#body').addClass('preload');
     onResize();
+    $('#body').removeClass('preload');
 });
 
 function runIt() {
@@ -37,18 +17,12 @@ function runIt() {
 }
 
 
-function onResize(repeat) {
-    if($(window).innerHeight() <= 450 || $(window).innerWidth() < 602 && scrolledDown) {
+function onResize() {
+    if(!scrolledDown || $(window).innerHeight() <= 450 || $(window).innerWidth() < 602) {
         $('#resume').hide();
     }
     else {
         $('#resume').show();
-    }
-
-    if(repeat > 0) {
-        repeat--;
-        console.log(repeat);
-        setTimeout(onResize(repeat), 500);
     }
 
     if (!scrolledDown) {

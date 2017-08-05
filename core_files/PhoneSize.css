@@ -90,7 +90,7 @@
         width: 165px;
         height: 100vh;
         position:fixed;
-        overflow-y: visible;
+        overflow-y: visible !important;
     }
 
     #menubar nav {
@@ -110,7 +110,7 @@
         color: white;
         list-style: none;
         overflow: hidden;
-        /*min-height: 100px;*/
+        min-height: 100px;
         height: 25%;
         padding: 0 0;
         width: 165px
@@ -136,7 +136,7 @@
         min-font-size: 1.5vw;
         overflow: hidden;
         height: 76%;
-        /*min-height: 250px;*/
+        min-height: 250px;
         width: 165px
     }
 
